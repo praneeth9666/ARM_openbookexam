@@ -101,12 +101,12 @@ loop2	VMUL.F32 S3,S1,S6; multiplying x with -1
 		VMOV.F32 S12,S19 ;radius
 		VMUL.F32 S15,S12,S11 ;rcos
 		VMUL.F32 S16,S12,S10 ;rsin
-		SUB R10,#1 
-		VADD.F32 S15,S15,S17
+		SUB R10,#1 	
+		VADD.F32 S15,S15,S17	;adding offset(center)
 		VMOV.F32 R0,S15
 		VADD.F32 S16,S16,S18
 		VMOV.F32 R1,S16
-		BL printMsg
+		BL printMsg  ;print message
 		MOV R5,#1
 		CMP R10,#0
 		BEQ Stop ;Stop the program
